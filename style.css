@@ -1,0 +1,260 @@
+/* initialize fonts */
+@font-face {
+    font-family: 'maskoolinalt';
+    src: url('fonts/maskoolin-webfont.woff2') format('woff2'),
+        url('fonts/maskoolin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'okta_neueultralight';
+    src: url('fonts/oktaneue-ultralight-webfont.woff2') format('woff2'),
+        url('fonts/oktaneue-ultralight-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'maskoolinregular';
+    src: url('fonts/extra/maskoolin-webfont.woff2') format('woff2'),
+        url('fonts/extra/maskoolin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* insert all colors here */
+:root {
+    /* must be RGBA, if you want a colorless navbar, change this to your hex background color */
+    --nav-footer: rgbA(144, 233, 244, 1);
+    /*color of text in navbar*/
+    --head-text-color: #e22f2f;
+    /*color of background of site */
+    --background-color: #fafaf6;
+    /*color for navbar hover underline */
+    --underline-color: #b5b5b5;
+    /*font for navbar */
+    --head-font: 'maskoolinalt';
+    
+}
+
+/*rest of stuff */
+.sectionHead {
+    text-decoration: underline;
+}
+
+.navbar {
+    background-color: var(--nav-footer);
+}
+
+.nav-link {
+    font-family: var(--head-font), arial;
+    font-size: 30px;
+    color: var(--head-text-color) !important;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 8px;
+}
+
+.navImg {
+    height: 100px;
+}
+
+.navbar-nav > li {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover;
+
+}
+
+body {
+    background-color: var(--background-color) !important;
+}
+
+.bioRole {
+    font-weight: 400 !important;
+    font-size: 25px;
+    vertical-align;
+}
+.bioImage{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.footer {
+    background: var(--nav-footer);
+}
+.roleTag{
+    background-color: var(--head-text-color);
+    color:var(--background-color);
+    padding:5px;
+    text-align: center;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    opacity: 0.95;
+}
+
+/* Underline From Center */
+.hvr-underline-from-center {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow: hidden;
+}
+
+.hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background: var(--underline-color);
+    height: 4px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+}
+
+/* Shutter Out Horizontal */
+.hvr-shutter-out-horizontal {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.hvr-shutter-out-horizontal:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #2098d1;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvr-shutter-out-horizontal:hover,
+.hvr-shutter-out-horizontal:focus,
+.hvr-shutter-out-horizontal:active {
+    color: #fff;
+}
+
+.hvr-shutter-out-horizontal:hover:before,
+.hvr-shutter-out-horizontal:focus:before,
+.hvr-shutter-out-horizontal:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+/* Fix bootstrap */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:active {
+    background: none;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:active {
+    background: none;
+    color: #555;
+}
+
+/* screen size stuff for mobile formatting */
+@media (max-width:846px) {
+    h1 {
+        font-size: 4vw;
+    }
+
+    h2 {
+        font-size: 3vw;
+    }
+
+    h3 {
+        font-size: 2.75vw;
+    }
+
+    h4 {
+        font-size: 3.5vw;
+    }
+
+    h5 {
+        font-size: 3vw;
+    }
+
+    p {
+        font-size: 2.75vw;
+    }
+}
+
+@media (min-width:846px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
